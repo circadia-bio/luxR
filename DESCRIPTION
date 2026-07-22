@@ -1,0 +1,34 @@
+Package: luxR
+Title: Light Exposure and Photic Regularity Analysis for Chronobiology Research
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Lucas", "França",
+           email = "lucas.franca@northumbria.ac.uk",
+           role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-0853-1319")),
+    person("Mario", "Leocadio-Miguel",
+           role = "aut",
+           comment = c(ORCID = "0000-0002-7248-3529"))
+    )
+Description: Tools for processing ambient light exposure data collected from
+    wrist-worn actigraphy devices (Axivity AX3/AX6 and ActTrust) in the
+    context of circadian and chronobiology research. luxR provides a
+    pipeline for photic exposure metrics (mean/median illuminance, time
+    above threshold, cumulative photic history, melanopic EDI
+    approximation) and light timing and regularity metrics (light
+    onset/offset detection, mean light timing, and a Light Regularity
+    Index analogous to sleep regularity indices), designed to integrate
+    with actigraphy- and sleep-derived circadian metrics from the wider
+    Circadia Lab ecosystem.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Depends:
+    R (>= 4.1.0)
+Suggests:
+    testthat (>= 3.0.0),
+    ggplot2
+Config/testthat/edition: 3
+URL: https://lux.circadia-lab.uk, https://github.com/circadia-bio/luxR
+BugReports: https://github.com/circadia-bio/luxR/issues
+Config/roxygen2/version: 8.0.0

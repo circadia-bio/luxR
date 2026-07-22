@@ -1,0 +1,205 @@
+url: https://lux.circadia-lab.uk
+
+# NOTE: luxR doesn't have its own hex logo yet (unlike sugaR's blush/purple
+# palette). Using the shared Circadia Lab brand palette as a placeholder --
+# swap bslib colours + `logo:` + opengraph image below once a hex logo is
+# designed, following the sugaR _pkgdown.yml pattern.
+template:
+  bootstrap: 5
+  bslib:
+    # ── Colours (Circadia Lab shared palette, placeholder) ──────────────────
+    # navy #014370 | coral #FC544A | amber #FFA75D | antique white #FFECD4
+    # mid blue #1B6799 | teal #9BDFE2
+    bg:              "#FFECD4"          # antique white
+    fg:              "#014370"          # navy
+    primary:         "#1B6799"          # mid blue
+    secondary:       "#9BDFE2"          # teal
+    success:         "#014370"          # navy
+    info:            "#9BDFE2"          # teal
+    warning:         "#FFA75D"          # amber
+    danger:          "#FC544A"          # coral
+
+    # ── Fonts ─────────────────────────────────────────────────────────────────
+    base_font:       {google: "DM Sans"}
+    heading_font:    {google: "DM Sans"}
+    code_font:       {google: "JetBrains Mono"}
+
+    # ── Typography ────────────────────────────────────────────────────────────
+    font-size-base:  "1rem"
+    headings-font-weight: 700
+
+    # ── Cards / surfaces ──────────────────────────────────────────────────────
+    card-bg:         "#FFFCFA"          # warm white
+    card-border-color: "#9BDFE2"        # teal
+    card-border-radius: "0.75rem"
+
+    # ── Code blocks ───────────────────────────────────────────────────────────
+    pre-bg:          "#014370"          # navy
+    pre-color:       "#FFECD4"          # antique white
+
+  includes:
+    in_header: |
+      <!-- Fathom - beautiful, simple website analytics -->
+      <script src="https://cdn.usefathom.com/script.js" data-site="NKUSHGRU" defer></script>
+      <!-- / Fathom -->
+      <meta name="theme-color" content="#014370">
+      <style>
+        /* ── Navbar ── */
+        .navbar {
+          background-color: #014370 !important;
+          border-bottom: 2px solid #1B6799;
+        }
+        .navbar .navbar-brand,
+        .navbar-nav .nav-link,
+        .navbar-nav .nav-link:hover,
+        .navbar .navbar-toggler-icon,
+        .navbar form .btn {
+          color: #FFECD4 !important;
+        }
+        .navbar-nav .nav-link:hover { opacity: 0.8; }
+        .navbar-nav .nav-link.active {
+          color: #FFECD4 !important;
+          border-bottom: 2px solid #1B6799;
+        }
+
+        /* ── Remove border under page title ── */
+        .page-header { border-bottom: none !important; }
+
+        /* ── Sidebar TOC links ── */
+        .sidebar .nav-link,
+        .sidebar a,
+        #toc a,
+        #toc .nav-link {
+          color: #014370 !important;
+        }
+        .sidebar .nav-link:hover,
+        .sidebar a:hover,
+        #toc a:hover {
+          color: #1B6799 !important;
+        }
+        .sidebar .nav-link.active,
+        #toc .nav-link.active {
+          color: #1B6799 !important;
+          border-left: 2px solid #9BDFE2;
+          font-weight: 600;
+        }
+
+        /* ── text-muted ── */
+        .text-muted { color: #1B6799 !important; }
+
+        /* ── Sidebar border ── */
+        .sidebar { border-left: 3px solid #9BDFE2; padding-left: 1rem; }
+
+        /* ── Reference index section headers ── */
+        .reference-index h2 {
+          color: #1B6799;
+          font-size: 0.8rem;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+        }
+
+        /* ── Inline code ── */
+        code { color: #014370; background: #EAF6FB;
+          border-radius: 4px; padding: 0.1em 0.35em; }
+
+        /* ── Links ── */
+        a { color: #1B6799; }
+        a:hover { color: #FC544A; }
+
+        /* ── Footer ── */
+        .footer { background: #014370; color: #FFECD4; padding: 1.5rem 0; }
+        .footer a { color: #9BDFE2; }
+
+        /* ── Search ── */
+        #search-input { border-color: #1B6799; }
+
+        /* ── Buttons ── */
+        .btn-primary {
+          background-color: #1B6799 !important;
+          border-color: #1B6799 !important;
+          color: #FFECD4 !important;
+        }
+        .btn-primary:hover {
+          background-color: #FC544A !important;
+          border-color: #FC544A !important;
+          color: #FFECD4 !important;
+        }
+      </style>
+
+home:
+  title: "luxR — Light exposure and photic regularity analysis for R"
+  description: >
+    An R package for processing ambient light exposure data from
+    wrist-worn actigraphy devices (Axivity, ActTrust) in the context of
+    circadian and chronobiology research: photic exposure metrics, light
+    timing, and a Light Regularity Index. Built by the Circadia Lab at
+    Northumbria University.
+  links:
+  - text: Circadia Lab
+    href: https://circadia-lab.uk
+  sidebar:
+    structure: [links, license, community, citation, authors, dev]
+
+navbar:
+  structure:
+    left:  [reference, news]
+    right: [search, github]
+  components:
+    github:
+      icon: fab fa-github
+      href: https://github.com/circadia-bio/luxR
+      aria-label: GitHub
+
+reference:
+- title: "Data structures"
+  desc: "Core S3 object for a light exposure trace."
+  contents:
+  - light_trace
+  - validate_light_trace
+
+- title: "Exposure metrics"
+  desc: "Photic exposure summaries."
+  contents:
+  - compute_mean_light
+  - compute_tat
+  - compute_photic_history
+  - compute_melanopic_edi
+
+- title: "Timing & regularity metrics"
+  desc: "Light onset/offset, timing, and regularity."
+  contents:
+  - find_light_onset
+  - find_light_offset
+  - compute_light_midpoint
+  - compute_lri
+
+- title: "Visualisation"
+  desc: "Actogram-style plotting for visual QC."
+  contents:
+  - plot_light_actogram
+
+- title: "Package"
+  desc: "Package-level documentation."
+  contents:
+  - luxR-package
+
+news:
+  releases:
+  - text: "Changelog"
+    href: news/index.html
+
+authors:
+  Lucas França:
+    href: https://orcid.org/0000-0003-0853-1319
+  Mario Leocadio-Miguel:
+    href: https://orcid.org/0000-0002-7248-3529
+
+footer:
+  structure:
+    left: [package, developed_by]
+    right: [built_with]
+  components:
+    package: >
+      **luxR** — Circadia Lab, Northumbria University.
+    developed_by: >
+      Lucas França & Mario Leocadio-Miguel.

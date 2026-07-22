@@ -1,0 +1,49 @@
+luxR — provenance and validation notes
+=========================================
+
+This file documents, per function, whether an algorithm has been validated
+against a canonical reference (prior publication, reference implementation,
+etc.), or whether it is a clean-room implementation not yet validated.
+
+light_trace() / validate_light_trace()
+  Status: NOT YET IMPLEMENTED / NOT YET VALIDATED
+
+compute_mean_light()
+  Status: NOT YET IMPLEMENTED / NOT YET VALIDATED
+
+compute_tat()
+  Status: NOT YET IMPLEMENTED / NOT YET VALIDATED
+  Intended reference: no canonical time-above-threshold cutoff has been
+  confirmed yet; 1000 lx default is a placeholder pending literature review
+  with Lucas/Mario.
+
+compute_photic_history()
+  Status: NOT YET IMPLEMENTED / NOT YET VALIDATED
+  Intended reference: exponentially-weighted cumulative light exposure as
+  used in circadian phase-response modelling literature (reference TBC).
+
+compute_melanopic_edi()
+  Status: NOT YET IMPLEMENTED / NOT YET VALIDATED
+  Caveat: actigraphy broadband light sensors (Axivity, ActTrust) do not
+  measure spectral composition, so any melanopic EDI conversion here is a
+  photopic-lux approximation via a fixed calibration factor, not a true
+  spectroradiometric measurement. Calibration factor and device-specific
+  defaults not yet confirmed with Lucas/Mario.
+
+compute_lri()
+  Status: NOT YET IMPLEMENTED / NOT YET VALIDATED
+  Intended reference: adapted from the same probability-of-same-state
+  logic underlying zeitR::compute_sri() (Sleep Regularity Index), applied
+  to a light/dark threshold state instead of sleep/wake.
+
+compute_light_midpoint()
+  Status: NOT YET IMPLEMENTED / NOT YET VALIDATED
+
+find_light_onset() / find_light_offset()
+  Status: NOT YET IMPLEMENTED / NOT YET VALIDATED
+
+---
+No Python reference pipeline has yet been identified for luxR (unlike
+zeitR, which validates against Julia's pipeline_functions_fix27.py).
+Confirm with Lucas whether a companion reference implementation exists
+for any of the above before treating them as production-ready.
