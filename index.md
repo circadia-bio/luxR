@@ -8,8 +8,6 @@ MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://luxr.circadia
 
 ------------------------------------------------------------------------
 
-![luxR hex logo](reference/figures/logo.png)
-
 ## 📖 What is luxR?
 
 luxR processes ambient light exposure data collected from wrist-worn
