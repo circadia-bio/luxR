@@ -1,14 +1,10 @@
-# ☀️ luxR
+# ☀️ luxR <img src="man/figures/logo.png" width="150" alt="luxR hex logo">
 
 **R package for photic exposure and light-timing/regularity metrics in circadian and chronobiology research.**
 [![R](https://img.shields.io/badge/R-%3E%3D4.1.0-276DC3)](https://www.r-project.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 ---
-
-<p align="center">
-  <img src="man/figures/logo.png" width="150" alt="luxR hex logo">
-</p>
 
 ## 📖 What is luxR?
 
